@@ -1,11 +1,24 @@
+/* Universal selector - these values will apply to all HTML elements unless explicitly overriden. */
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    /* Moved font-family property under universal selector */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 body {
     background-color: #d9dcd6;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+p {
+    font-family: inherit;
+    font-size: 16px;
 }
 
 .header {
@@ -17,10 +30,13 @@ body {
 
 .header h1 {
     display: inline-block;
+    font-family: inherit;
     font-size: 48px;
 }
 
-.header h1 .seo {
+/* Renamed this selector to use the class name of the "span" element */
+.seo {
+    font-family: inherit;
     color: #d9dcd6;
 }
 
@@ -28,7 +44,6 @@ body {
     padding-top: 15px;
     margin-right: 20px;
     float: right;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 20px;
 }
 
@@ -41,39 +56,12 @@ body {
     margin-left: 25px;
 }
 
-a {
-    color: #ffffff;
-    text-decoration: none;
-}
-
-p {
-    font-size: 16px;
-}
-
+/* Removed background image, moved to HTML to add "alt" attribute */
 .hero {
-    
-    margin-bottom: 25px;
-    /* background-image: url("../images/digital-marketing-meeting.jpg"); 
-    background-size: cover;
-    background-position: center;*/
-}
-
-/* Added this selector to manipulate img element independently from "hero" containter */
-.hero img {
     height: 800px;
     width: 100%;
     object-fit: cover;
-    
-}
-
-.float-left {
-    float: left;
-    margin-right: 25px;
-}
-
-.float-right {
-    float: right;
-    margin-left: 25px;
+    margin-bottom: 25px;
 }
 
 .content {
@@ -89,108 +77,58 @@ p {
     float: right;
     width: 20%;
     height: 100%;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-color: #2589bd;
 }
 
-.benefit-lead {
+/* Consolidated CSS properties for all items in aside container under class selectors */
+.benefit-items {
     margin-bottom: 32px;
     color: #ffffff;
 }
 
-.benefit-brand {
-    margin-bottom: 32px;
-    color: #ffffff;
-}
-
-.benefit-cost {
-    margin-bottom: 32px;
-    color: #ffffff;
-}
-
-.benefit-lead h3 {
+.benefit-items h3 {
     margin-bottom: 10px;
     text-align: center;
 }
 
-.benefit-brand h3 {
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-.benefit-cost h3 {
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-.benefit-lead img {
+.benefit-items img {
     display: block;
     margin: 10px auto;
     max-width: 150px;
 }
 
-.benefit-brand img {
-    display: block;
-    margin: 10px auto;
-    max-width: 150px;
-}
-
-.benefit-cost img {
-    display: block;
-    margin: 10px auto;
-    max-width: 150px;
-}
-
-.search-engine-optimization {
+/* Consolidated CSS properties for all items in main container under class selectors */
+.content-items {
     margin-bottom: 20px;
     padding: 50px;
     height: 300px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-color: #0072bb;
-    color: #ffffff;
+    color: #ffffff;  
 }
 
-.online-reputation-management {
-    margin-bottom: 20px;
-    padding: 50px;
-    height: 300px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: #0072bb;
-    color: #ffffff;
-}
-
-.social-media-marketing {
-    margin-bottom: 20px;
-    padding: 50px;
-    height: 300px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: #0072bb;
-    color: #ffffff;
-}
-
-.search-engine-optimization img {
+.content-items img {
     max-height: 200px;
+    /* Moved "float-left" selector properties here for left indentation to be the default */
+    /* 
+        NOTE: If customer wants to change the default to right indentation, then change this float value to "right" 
+        Then, under the #float-opposite selector, change float value to "left"
+    */
+    float: left;
+    margin-right: 25px;
 }
 
-.online-reputation-management img {
-    max-height: 200px;
+/*
+    Kept this selector to allow articles images to be indented right when specified via ID.
+    I had to change it from a class selector to an ID selector to achieve desired result.
+*/
+/* 
+    NOTE: Add the id="float-opposite" attribute+value in HTML to img elements to be indented in the opposite direction from the default.
+*/
+#float-opposite {
+    float: right;
 }
 
-.social-media-marketing img {
-    max-height: 200px;
-}
-
-.search-engine-optimization h2 {
-    margin-bottom: 20px;
-    font-size: 36px;
-}
-
-.online-reputation-management h2 {
-    margin-bottom: 20px;
-    font-size: 36px;
-}
-
-.social-media-marketing h2 {
+.content-items h2 {
     margin-bottom: 20px;
     font-size: 36px;
 }
@@ -203,5 +141,6 @@ p {
 }
 
 .footer h2 {
+    font-family: inherit;
     font-size: 20px;
 }
