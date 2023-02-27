@@ -7,20 +7,24 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+/* Sets background color for the main background of the webpage */
 body {
     background-color: #d9dcd6;
 }
 
+/* Sets default styling for all hyperlinks */
 a {
     color: #ffffff;
     text-decoration: none;
 }
 
+/* Sets default font-related properties for all paragraph elements */
 p {
     font-family: inherit;
     font-size: 16px;
 }
 
+/* Sets properties for header element */
 .header {
     padding: 20px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -28,18 +32,21 @@ p {
     color: #ffffff;
 }
 
+/* Sets properties for company name */
 .header h1 {
     display: inline-block;
     font-family: inherit;
     font-size: 48px;
 }
 
-/* Renamed this selector to use the class name of the "span" element */
+/* Renamed this selector to use the class name of the 'span' element */
+/* Controls the styling of the letters 'seo' of the company name */
 .seo {
     font-family: inherit;
     color: #d9dcd6;
 }
 
+/* Sets properties for navigation element */
 .header nav {
     padding-top: 15px;
     margin-right: 20px;
@@ -47,16 +54,19 @@ p {
     font-size: 20px;
 }
 
+/* Sets properties for list of navigation links */
 .header nav ul {
     list-style-type: none;
 }
 
+/* Sets properties for the individual navigation links */
 .header nav ul li {
     display: inline-block;
     margin-left: 25px;
 }
 
-/* Removed background image, moved to HTML to add "alt" attribute */
+/* Removed background image from 'hero' selector, moved to HTML as 'img' element to add 'alt' attribute */
+/* Sets properties for main banner */
 .hero {
     height: 800px;
     width: 100%;
@@ -64,40 +74,15 @@ p {
     margin-bottom: 25px;
 }
 
+/* Sets properties for main content */
 .content {
     width: 75%;
     display: inline-block;
     margin-left: 20px;
 }
 
-.benefits {
-    margin-right: 20px;
-    padding: 20px;
-    clear: both;
-    float: right;
-    width: 20%;
-    height: 100%;
-    background-color: #2589bd;
-}
-
-/* Consolidated CSS properties for all items in aside container under class selectors */
-.benefit-items {
-    margin-bottom: 32px;
-    color: #ffffff;
-}
-
-.benefit-items h3 {
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-.benefit-items img {
-    display: block;
-    margin: 10px auto;
-    max-width: 150px;
-}
-
 /* Consolidated CSS properties for all items in main container under class selectors */
+/* Sets properties for articles in main content */
 .content-items {
     margin-bottom: 20px;
     padding: 50px;
@@ -106,6 +91,7 @@ p {
     color: #ffffff;  
 }
 
+/* Sets properties for the articles images in main content */
 .content-items img {
     max-height: 200px;
     /* Moved "float-left" selector properties here for left indentation to be the default */
@@ -118,8 +104,8 @@ p {
 }
 
 /*
-    Kept this selector to allow articles images to be indented right when specified via ID.
-    I had to change it from a class selector to an ID selector to achieve desired result.
+    Kept this selector to allow articles images to be indented right when specified via 'id' in HTML.
+    I had to change it from a Class selector to an ID selector to achieve desired result.
 */
 /* 
     NOTE: Add the id="float-opposite" attribute+value in HTML to img elements to be indented in the opposite direction from the default.
@@ -128,11 +114,44 @@ p {
     float: right;
 }
 
+/* Sets properties for titles of articles in main content */
 .content-items h2 {
     margin-bottom: 20px;
     font-size: 36px;
 }
 
+/* Sets properties for sidebar content */
+.benefits {
+    margin-right: 20px;
+    padding: 20px;
+    clear: both;
+    float: right;
+    width: 20%;
+    height: 100%;
+    background-color: #2589bd;
+}
+
+/* Consolidated CSS properties for all items in aside container under class selectors */
+/* Sets properties for sidebar items */
+.benefit-items {
+    margin-bottom: 32px;
+    color: #ffffff;
+}
+
+/* Sets properties for titles of sidebar items */
+.benefit-items h3 {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Sets properties for icons of sidebar items */
+.benefit-items img {
+    display: block;
+    margin: 10px auto;
+    max-width: 150px;
+}
+
+/* Sets properties for page footer */
 .footer {
     padding: 30px;
     clear: both;
@@ -140,6 +159,7 @@ p {
     text-align: center;
 }
 
+/* Sets properties for page footer message */
 .footer h2 {
     font-family: inherit;
     font-size: 20px;
